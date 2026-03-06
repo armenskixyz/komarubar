@@ -1,0 +1,32 @@
+* {
+  font-family: "JetBrains Mono", monospace;
+}
+
+window {
+  background-color: rgba(0,0,0,0);
+  border-bottom: 2px solid #ffffff;
+}
+
+#workspace-button {
+  all: unset;
+  background-color: #ffffff;
+  font-size: 8px;
+  border-radius: 9999px;
+  transition: all 0.5s ease-in-out;
+}
+
+#workspaces-box {
+  background-color: #b0b0b0;
+  padding: 2px;
+  border-radius: 15px;
+}
+
+#workspace-button.active {
+  min-width: 30px;
+}
+
+#clock-module {
+  color: #ffffff;
+  background-color: #ff00ff;
+  font-size: 16px
+}
