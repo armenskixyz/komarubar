@@ -1,32 +1,51 @@
 * {
   font-family: "JetBrains Mono", monospace;
+  color: @stext;
 }
 
+@define-color bg #1e1e2e;
+@define-color mantle #181825;
+@define-color surface1 #45475a;
+@define-color surface2 #585b70;
+@define-color text #cdd6f4;
+@define-color stext #a6adc8;
+@define-color accent-pink #f5c2e7;
+
 window {
-  background-color: rgba(0,0,0,0);
-  border-bottom: 2px solid #ffffff;
+  background-color: rgba(0, 0, 0, 0);
+  /* border-bottom: 2px solid #ffffff; */
 }
 
 #workspace-button {
   all: unset;
-  background-color: #ffffff;
+  background-color: @mantle;
   font-size: 8px;
   border-radius: 9999px;
   transition: all 0.5s ease-in-out;
 }
 
-#workspaces-box {
-  background-color: #b0b0b0;
-  padding: 2px;
-  border-radius: 15px;
+#workspace-button label {
+  transition: all 0.5s ease-in-out;
 }
 
 #workspace-button.active {
   min-width: 30px;
+  background-color: @accent-pink;
+}
+
+#workspace-button.active label {
+  color: @mantle;
+}
+
+#workspaces-box {
+  background-color: @bg;
+  padding: 2px;
+  border-radius: 15px;
 }
 
 #clock-module {
-  color: #ffffff;
-  background-color: #ff00ff;
-  font-size: 16px
+  background-color: @bg;
+  padding: 2px 4px;
+  border-radius: 20px;
+  font-size: 16px;
 }

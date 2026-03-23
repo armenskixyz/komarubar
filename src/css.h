@@ -3,7 +3,7 @@
 #include "gtk/gtkcssprovider.h"
 #include <gtk/gtk.h>
 
-#define CSS_PATH "src/style.css"
+#define CSS_PATH "/home/armen/.config/komarubar/style.css"
 
 void applyCss() {
   GtkCssProvider *provider = gtk_css_provider_new();
