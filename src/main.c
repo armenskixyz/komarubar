@@ -11,6 +11,7 @@
 
 #include "modules/clock.h"
 #include "modules/workspaces.h"
+#include "modules/battery-display.h"
 
 #define BAR_HEIGHT 30
 
@@ -80,8 +81,10 @@ void barInit(GdkMonitor *monitor) {
   gtk_widget_set_valign(center_box, GTK_ALIGN_CENTER);
 
   GtkWidget *clock_center = clockNew();
+  GtkWidget *battery_display = newBatteryDisplay();
 
   gtk_box_pack_start(GTK_BOX(center_box), clock_center, FALSE, TRUE, 10);
+  gtk_box_pack_end(GTK_BOX(center_box), battery_display, FALSE, FALSE, 3);
 
   int sock = hyprlandConnect(EVENT_SOCKET);
   fcntl(sock, F_SETFL, O_NONBLOCK);
