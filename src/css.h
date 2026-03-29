@@ -3,15 +3,24 @@
 #include "gtk/gtkcssprovider.h"
 #include <gtk/gtk.h>
 
-#define CSS_PATH "/home/armen/.config/komarubar/style.css"
+void getCssPath(char* buffer, int size) {
+  //TODO: Add custom css paths
+  char* home_path = getenv("HOME");
+  snprintf(buffer, size, "%s/.config/komarubar/style.css", home_path );
+}
 
 void applyCss() {
   GtkCssProvider *provider = gtk_css_provider_new();
   GdkDisplay *display = gdk_display_get_default();
   GdkScreen *screen = gdk_screen_get_default();
 
+  char css_path[1024];
+  getCssPath(css_path, 1024);
+
+  g_print("%s", css_path);
+
   GError *error = NULL;
-  gtk_css_provider_load_from_path(provider, CSS_PATH, &error);
+  gtk_css_provider_load_from_path(provider, css_path, &error);
 
   if (error) {
     g_warning("Could not load CSS: %s", error->message);

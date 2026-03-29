@@ -14,6 +14,7 @@ int getBatteryCapacity() {
   int capacity;
 
   fscanf(fp, "%d", &capacity);
+  fclose(fp);
   return capacity;
   
 }
